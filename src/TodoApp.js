@@ -21,7 +21,7 @@ function TodoApp(){
             padding:0,
             margin:0,
             height:"100vh",
-            backgroundColor:"#fafafa"
+            backgroundColor:"red"
         }} elevation={0}
         >
             <AppBar color='primary' position='static' style={{height:"64px"}}>
@@ -29,8 +29,14 @@ function TodoApp(){
                     <Typography color='inherit' variant='h6'>Todos with hooks</Typography>
                 </Toolbar>
             </AppBar>
-            <TodoForm addTodo={addTodo} />
-            <TodoList todos={todos}></TodoList>
+            <Grid container justify='center' style={{marginTop:"1rem"}}>
+                <Grid item xs={11} md={8} lg={4}>
+                <TodoForm addTodo={addTodo} />
+                <TodoList todos={todos}></TodoList>
+                </Grid>
+            
+            </Grid>
+            
 
         </Paper>
     );
