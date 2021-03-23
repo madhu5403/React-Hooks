@@ -2,15 +2,15 @@ import { ListItemText, Paper,List,ListItem, Divider, Checkbox, ListItemSecondary
 import DeleteIcon from "@material-ui/icons/Delete"
 import EditIcon from "@material-ui/icons/Edit"
 
-const Todo=function Todo({task,completed}){
+const Todo=function Todo({task,completed,removeTodo,id,toggleTodo}){
     return(
         <ListItem>
-            <Checkbox checked={completed} tabIndex={-1}/>
+            <Checkbox checked={completed} tabIndex={-1} onClick={()=>toggleTodo(id)}/>
             <ListItemText style={{textDecoration:completed?"line-through":"none"}}>
                 {task}
             </ListItemText>
             <ListItemSecondaryAction>
-                <IconButton>
+                <IconButton onClick={()=>removeTodo(id)}>
                     <DeleteIcon aria-label='Delete'/>
                 </IconButton>
                 <IconButton>
